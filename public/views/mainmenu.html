@@ -1,0 +1,9 @@
+<nav class="navbar navbar-default" ng-controller="MenuCtrl">
+    <ul class="nav navbar-nav">
+      <li over="alert-warning" out><a href="/#/home">Home</a></li>
+      <li over="alert-warning" out ng-show="isLoggedIn()" ><a href="" ng-click="logOut()">Log Out</a></li>
+      <li currentuser="alert-info" over="alert-warning" out ng-show="isLoggedIn()"><a href="/#/profile"> Welcome {{ currentUser() }}</a></li>
+      <li over="alert-warning" out ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+      <li over="alert-warning" out ng-hide="isLoggedIn()" ><a href="/#/register">Register</a></li>
+    </ul>
+</nav>

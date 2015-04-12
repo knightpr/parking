@@ -1,11 +1,21 @@
-app.directive('parkingfooter',function () {
+app.directive('mainmenu',function () {
   return {
     restrict: 'E',
-    scope: {
-      copyright: "@",
-      title: "@"
-    },
-    templateUrl: "/footer.html"
+    templateUrl: "views/mainmenu.html"
+  };
+});
+
+app.directive('mainbody',function () {
+  return {
+    restrict: 'E',
+    templateUrl: "views/mainbody.html"
+  };
+});
+
+app.directive('mainfooter',function () {
+  return {
+    restrict: 'E',
+    templateUrl: "views/footer.html"
   };
 });
 

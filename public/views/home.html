@@ -1,0 +1,38 @@
+   <div class="page-header">
+        <h1>Your parking</h1>
+      </div>
+   
+    <div ng-hide="isLoggedIn()">
+    <h3>You need to <a href="/#/login">Log In</a> or <a href="/#/register">Register</a> before you continue.</h3>
+  </div>
+
+
+    <div class="form-group" ng-show="isLoggedIn()">
+      <input type="text"
+        class="form-control"
+        placeholder="search your vechile"
+        ng-model="search.$"></input>
+    </div>
+     <div ng-repeat="vechile in vechiles | filter:search | orderBy:'model_name'" ng-show="isLoggedIn()" >
+      <span class="glyphicon glyphicon-asterisk"></span>
+        {{vechile.model_name}} - <a href="/vechiles/{{vechile._id}}">{{vechile.plate_no}}</a>
+    </div>
+
+    <form ng-submit="addVechile()"
+        style="margin-top:30px;"   ng-show="isLoggedIn()">
+        <h3>Add a new vechile</h3>
+
+        <div class="form-group">
+          <input type="text"
+            class="form-control"
+            placeholder="Model name"
+            ng-model="model_name"></input>
+        </div>
+        <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="Plate number"
+          ng-model="plate_no"></input>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form> 

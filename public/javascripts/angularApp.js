@@ -4,7 +4,7 @@ app.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlR
 		$stateProvider
 			.state ('home',{
 				url:'/home',
-				templateUrl:'/home.html',
+				templateUrl:'views/home.html',
 				controller: 'MainCtrl',
 				resolve: {
 					    vechilePromise: ['vechiles', function(vechiles){
@@ -14,7 +14,7 @@ app.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlR
 			})
 			.state('profile', {
 			  url: '/profile',
-			  templateUrl: '/profiles.html',
+			  templateUrl: 'views/profiles.html',
 			  controller: 'ProfileCtrl',
 			  resolve: {
 					    profilePromise: ['profile', function(profile){
@@ -25,7 +25,7 @@ app.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlR
 			})
 			.state('vechiles', {
 			  url: '/vechiles/{id}',
-			  templateUrl: '/vechiles.html',
+			  templateUrl: 'views/vechiles.html',
 			  controller: 'VechileCtrl',
 			  resolve: {
 			    vechile: ['$stateParams', 'vechiles', function($stateParams, vechiles) {
@@ -35,7 +35,7 @@ app.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlR
 			})
 			.state('login', {
 			  url: '/login',
-			  templateUrl: '/login.html',
+			  templateUrl: 'views/login.html',
 			  controller: 'AuthCtrl',
 			  onEnter: ['$state', 'auth', function($state, auth){
 			    if(auth.isLoggedIn()){
@@ -45,7 +45,7 @@ app.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlR
 			})
 			.state('register', {
 			  url: '/register',
-			  templateUrl: '/register.html',
+			  templateUrl: 'views/register.html',
 			  controller: 'AuthCtrl',
 			  onEnter: ['$state', 'auth', function($state, auth){
 			    if(auth.isLoggedIn()){

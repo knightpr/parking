@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var vechiles = require('./routes/vechiles');
+var parkings = require('./routes/parkings');
 var passport = require('passport');
 
 //db connection 
@@ -15,6 +16,7 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 require('./models/Users');
 require('./models/Vechiles');
+require('./models/Parkings');
 require('./config/passport');
 
 mongoose.connect('mongodb://localhost/parking-dev');
@@ -37,6 +39,7 @@ app.use(passport.initialize());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/vechiles', vechiles);
+app.use('/parkings', parkings);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

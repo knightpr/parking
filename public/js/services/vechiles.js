@@ -6,6 +6,7 @@ app.factory('vechiles',['$http', 'auth',function($http, auth){
   o.getMyAllVechiles = function (){
   	if (auth.isLoggedIn()) { 
 		return $http.get('/users/'+auth.currentUserId()+'/').success(function(data){
+		  console.log(data);	
 	      angular.copy(data.vechiles, o.vechiles);
 	    });
 	}

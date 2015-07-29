@@ -30,7 +30,12 @@ router.get('/:id', function(req, res, next) {
     res.json(vechile);
   });
 });
-
+// router.get('/:id', function(req, res, next) {
+//   req.vechile.populate('vechiles', function(err, vechile) {
+//     if (err) { return next(err); }
+//     res.json(vechile);
+//   });
+// });
 /* PUT /vechiles/:id */
 router.put('/:id',function(req, res, next) {
   Vechile.findByIdAndUpdate(req.params.id, req.body, function (err, vechile) {

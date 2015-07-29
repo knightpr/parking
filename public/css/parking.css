@@ -28,7 +28,10 @@ body > .container {
 .container .text-muted {
   margin: 20px 0;
 }
-
+.row {
+  margin-right: 0px;
+  margin-left: 0px; 
+}
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
